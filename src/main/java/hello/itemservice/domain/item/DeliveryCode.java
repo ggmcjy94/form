@@ -1,6 +1,8 @@
 package hello.itemservice.domain.item;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -10,10 +12,14 @@ import lombok.RequiredArgsConstructor;
  */
 
 @Data
-@RequiredArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class DeliveryCode {
 
     private String code;
     private String displayName;
 
+    public DeliveryCode(String code, String displayName) {
+        this.code = code;
+        this.displayName = displayName;
+    }
 }
